@@ -3,8 +3,6 @@ import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import { VscThreeBars } from "react-icons/vsc";
 import { range, orderBy } from "lodash";
 
-import playlistData from "../data";
-
 type SongType = {
   id: number;
   title: string;
@@ -13,7 +11,7 @@ type SongType = {
   thumb: string;
   position: number;
 };
-export default function DndPlaylist() {
+export default function DndPlaylist({ playlistData }) {
   const [playlist, setPlaylist] = React.useState<SongType[]>(playlistData);
 
   const listRenderer = orderBy(playlist, "position").map((item) => (

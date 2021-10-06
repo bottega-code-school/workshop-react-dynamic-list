@@ -1,12 +1,9 @@
-import { orderBy } from "lodash";
 import * as React from "react";
 
-import playlistData from "../data";
-
-export default function GridPlaylist() {
+export default function GridPlaylist({ playlistData }) {
   return (
     <div className="grid-container">
-      {orderBy(playlistData, "position").map((item) => (
+      {playlistData.map((item) => (
         <div key={item.id} className="grid-container__item">
           <div>
             <img src={item.thumb} width="100%" />

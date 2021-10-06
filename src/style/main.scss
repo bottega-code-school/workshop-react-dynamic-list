@@ -47,6 +47,8 @@ body {
 .layout-filter {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  height: 60px;
 
   a {
     font-size: 1.5rem;
