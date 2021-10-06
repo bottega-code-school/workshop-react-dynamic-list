@@ -4,16 +4,16 @@ import { VscListFilter } from "react-icons/vsc";
 import { useHistory, useParams } from "react-router";
 import { NavLink } from "react-router-dom";
 import DndPlaylist from "./DndPlaylist";
+import GridPlaylist from "./GridPlaylist";
 import Layout from "./Layout";
 
 type ViewType = "row" | "grid";
+
 export default function Playlist() {
   const history = useHistory();
   const { viewParam }: { viewParam?: ViewType } = useParams();
 
   const [viewToShow, setViewToShow] = React.useState<ViewType>(null);
-
-  console.log("VIEW PARAM", viewParam);
 
   React.useEffect(() => {
     if (viewParam) {
@@ -47,7 +47,7 @@ export default function Playlist() {
     <Layout>
       {listFilters}
       {viewToShow === "row" && <DndPlaylist />}
-      {viewToShow === "grid" && <DndPlaylist />}
+      {viewToShow === "grid" && <GridPlaylist />}
     </Layout>
   );
 }

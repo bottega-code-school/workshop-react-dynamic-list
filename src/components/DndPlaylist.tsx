@@ -34,9 +34,7 @@ export default function DndPlaylist() {
           <div>
             <img src={item.thumb} width="100%" />
           </div>
-          <div>
-            {item.position} - {item.title}
-          </div>
+          <div>{item.title}</div>
           <div>{item.artist}</div>
           <div>{item.released}</div>
         </div>
